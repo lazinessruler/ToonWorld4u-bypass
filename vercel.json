@@ -8,13 +8,19 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/bypass",
       "dest": "api/bypass.ts"
+    },
+    {
+      "src": "/",
+      "dest": "api/bypass.ts"
+    },
+    {
+      "src": "/health",
+      "dest": "api/bypass.ts?health=true"
     }
   ],
-  "functions": {
-    "api/bypass.ts": {
-      "maxDuration": 10
-    }
+  "env": {
+    "NODE_ENV": "production"
   }
 }
